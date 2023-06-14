@@ -33,7 +33,7 @@ const DocumentData = ({ documentName }: DocumentDataProps): JSX.Element => {
   return (
     <div className="prose dark:prose-invert">
       <h1 className="text-bold text-3xl break-words">{documentName}</h1>
-      <p>No. of chunks: {documents.length}</p>
+      <p>语料分块数量: {documents.length}</p>
 
       <div className="flex flex-col">
         {documents[0] &&

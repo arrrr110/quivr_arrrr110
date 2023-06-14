@@ -18,7 +18,7 @@ const ChatMessages: FC<ChatMessagesProps> = ({ history }) => {
     <div className="overflow-hidden flex flex-col gap-5 scrollbar scroll-smooth">
       {history.length === 0 ? (
         <div className="text-center opacity-50">
-          Ask a question, or describe a task.
+          问一个问题, 或描述一项任务...
         </div>
       ) : (
         <AnimatePresence initial={false}>

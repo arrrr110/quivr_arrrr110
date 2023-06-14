@@ -45,10 +45,10 @@ export default function ExplorePage() {
       <section className="w-full outline-none pt-32 flex flex-col gap-5 items-center justify-center p-6">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-3xl font-bold text-center">
-            Explore uploaded data
+            入库文档
           </h1>
           <h2 className="opacity-50">
-            View or delete stored data used by your brain
+            查看文档详情或删除
           </h2>
         </div>
         {isPending ? (
@@ -67,9 +67,9 @@ export default function ExplorePage() {
               </AnimatePresence>
             ) : (
               <div className="flex flex-col items-center justify-center mt-10 gap-1">
-                <p className="text-center">Oh No, Your Brain is empty.</p>
+                <p className="text-center">这里是空的</p>
                 <Link href="/upload">
-                  <Button>Upload</Button>
+                  <Button>上传</Button>
                 </Link>
               </div>
             )}

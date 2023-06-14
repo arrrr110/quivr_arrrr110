@@ -29,13 +29,13 @@ export const FileUploader = (): JSX.Element => {
             <input {...getInputProps()} />
             <div className="text-center p-6 max-w-sm w-full flex flex-col gap-5 items-center">
               {isDragActive ? (
-                <p className="text-blue-600">Drop the files here...</p>
+                <p className="text-blue-600">将文件拖放到此处...</p>
               ) : (
                 <button
                   onClick={open}
                   className="opacity-50 h-full cursor-pointer hover:opacity-100 hover:underline transition-opacity"
                 >
-                  Drag and drop files here, or click to browse
+                  将文件拖放到此处，或单击以浏览
                 </button>
               )}
             </div>
@@ -62,7 +62,7 @@ export const FileUploader = (): JSX.Element => {
       </div>
       <div className="flex flex-col items-center justify-center">
         <Button isLoading={isPending} onClick={uploadAllFiles}>
-          {isPending ? `Uploading ${files[pendingFileIndex].name}` : "Upload"}
+          {isPending ? `正在上传 ${files[pendingFileIndex].name}` : "上传"}
         </Button>
       </div>
     </section>

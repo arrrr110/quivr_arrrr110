@@ -1,7 +1,6 @@
 "use client";
 import Button from "@/app/components/ui/Button";
 import Card from "@/app/components/ui/Card";
-import { Divider } from "@/app/components/ui/Divider";
 import Field from "@/app/components/ui/Field";
 import PageHeading from "@/app/components/ui/PageHeading";
 import { useSupabase } from "@/app/supabase-provider";
@@ -9,8 +8,6 @@ import { useToast } from "@/lib/hooks/useToast";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useState } from "react";
-import { GoogleLoginButton } from "./components/GoogleLogin";
-import { MagicLinkLogin } from "./components/MagicLinkLogin";
 
 export default function Login() {
   const { supabase, session } = useSupabase();
@@ -48,7 +45,7 @@ export default function Login() {
   return (
     <main>
       <section className="w-full min-h-screen h-full outline-none flex flex-col gap-5 items-center justify-center p-6">
-        <PageHeading title="Login" subtitle="Welcome back" />
+        <PageHeading title="登录" subtitle="欢迎回来" />
         <Card className="max-w-md w-full p-5 sm:p-10 text-left">
           <form
             onSubmit={(e) => {
@@ -75,16 +72,16 @@ export default function Login() {
             />
             <div className="flex flex-col items-center justify-center mt-2 gap-2">
               <Button type="submit" isLoading={isPending}>
-                Login
+                登录
               </Button>
-              <Link href="/signup">Don{"'"}t have an account? Sign up</Link>
+              <Link href="/signup">没有账号? 注册一个</Link>
             </div>
-            <Divider text="or" />
+            {/* <Divider text="or" />
             <div className="flex flex-col items-center justify-center mt-2 gap-2">
               <GoogleLoginButton />
             </div>
             <Divider text="or" />
-            <MagicLinkLogin email={email} setEmail={setEmail} />
+            <MagicLinkLogin email={email} setEmail={setEmail} /> */}
           </form>
         </Card>
       </section>

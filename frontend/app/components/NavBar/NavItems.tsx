@@ -27,13 +27,13 @@ const NavItems: FC<NavItemsProps> = ({ className, setOpen, ...props }) => {
       {isLocal || isUserLoggedIn ? (
         <>
           <NavLink setOpen={setOpen} to="/upload">
-            Upload
+            上传
           </NavLink>
           <NavLink setOpen={setOpen} to="/chat">
-            Chat
+            对话
           </NavLink>
           <NavLink setOpen={setOpen} to="/explore">
-            Explore
+            探索
           </NavLink>
         </>
       ) : (
@@ -50,7 +50,7 @@ const NavItems: FC<NavItemsProps> = ({ className, setOpen, ...props }) => {
         {isUserLoggedIn && (
           <>
             <Link href={"/logout"}>
-              <Button variant={"secondary"}>Logout</Button>
+              <Button variant={"secondary"}>注销</Button>
             </Link>
             <Link href={"/config"}>
               <Button
@@ -63,9 +63,9 @@ const NavItems: FC<NavItemsProps> = ({ className, setOpen, ...props }) => {
           </>
         )}
         {!isLocal && !isUserLoggedIn && (
-          <Link href={"https://try-quivr.streamlit.app"}>
+          // <Link href={"https://try-quivr.streamlit.app"}>
             <Button variant={"secondary"}>Try Demo</Button>
-          </Link>
+          // </Link>
         )}
         <DarkModeToggle />
       </div>

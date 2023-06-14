@@ -1,14 +1,14 @@
 "use client";
-import { redirect } from "next/navigation";
-
 import {
   anthropicModels,
-  models,
+  models
 } from "@/lib/context/BrainConfigProvider/types";
+import { redirect } from "next/navigation";
 import Button from "../components/ui/Button";
 import Field from "../components/ui/Field";
 import { useSupabase } from "../supabase-provider";
 import { useConfig } from "./hooks/useConfig";
+
 
 export default function ExplorePage() {
   const { session } = useSupabase();
@@ -31,9 +31,9 @@ export default function ExplorePage() {
     <main className="min-h-screen w-full flex flex-col">
       <section className="w-full outline-none pt-32 flex flex-col gap-5 items-center justify-center p-6">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold text-center">Configuration</h1>
+          <h1 className="text-3xl font-bold text-center">配置</h1>
           <h2 className="opacity-50 text-center">
-            Here, you can choose your model, set your credentials...
+            在这里选择模型, 配置通行令牌...
           </h2>
         </div>
         <form
@@ -42,7 +42,7 @@ export default function ExplorePage() {
         >
           <div className="border-b border-gray-300 mt-8 mb-8">
             <p className="text-center text-gray-600 uppercase tracking-wide font-semibold">
-              Model config
+              模型配置
             </p>
           </div>
           <Field
@@ -106,7 +106,7 @@ export default function ExplorePage() {
           </fieldset>
           <div className="border-b border-gray-300 mt-8 mb-8">
             <p className="text-center text-gray-600 uppercase tracking-wide font-semibold">
-              Backend config
+              后台配置
             </p>
           </div>
           <Field
@@ -147,14 +147,14 @@ export default function ExplorePage() {
               type="button"
               onClick={resetBrainConfig}
             >
-              Reset
+              重置
             </Button>
             <Button
               disabled={!isDirty}
               variant="secondary"
               className="self-end"
             >
-              Done
+              确认
             </Button>
           </div>
         </form>

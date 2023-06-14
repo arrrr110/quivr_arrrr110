@@ -4,11 +4,8 @@ import { useSupabase } from "@/app/supabase-provider";
 import { useToast } from "@/lib/hooks/useToast";
 import { useAxios } from "@/lib/useAxios";
 import {
-  Dispatch,
-  RefObject,
-  SetStateAction,
-  forwardRef,
-  useState,
+  Dispatch, forwardRef, RefObject,
+  SetStateAction, useState
 } from "react";
 import Button from "../../components/ui/Button";
 import { AnimatedCard } from "../../components/ui/Card";
@@ -57,16 +54,16 @@ const DocumentItem = forwardRef(
           {document.name}
         </Ellipsis>
         <div className="flex gap-2 self-end">
-          <Modal Trigger={<Button className="">View</Button>}>
+          <Modal Trigger={<Button className="">详情</Button>}>
             <DocumentData documentName={document.name} />
           </Modal>
 
           <Modal
-            title={"Confirm"}
-            desc={`Do you really want to delete?`}
+            title={"注意"}
+            desc={`你真的想删除吗?`}
             Trigger={
               <Button isLoading={isDeleting} variant={"danger"} className="">
-                Delete
+                删除
               </Button>
             }
             CloseTrigger={
@@ -78,7 +75,7 @@ const DocumentItem = forwardRef(
                 }}
                 className="self-end"
               >
-                Delete forever
+                永久删除
               </Button>
             }
           >

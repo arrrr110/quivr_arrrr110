@@ -1,11 +1,10 @@
 "use client";
-import Image from "next/image";
-import { FC, useEffect, useRef, useState } from "react";
-
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { FC, useEffect, useRef, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import NavItems from "./NavItems";
+
 
 const NavBar: FC = () => {
   const scrollPos = useRef<number>(0);
@@ -36,14 +35,15 @@ const NavBar: FC = () => {
     >
       <nav className="max-w-screen-xl mx-auto py-1 flex items-center justify-between gap-8">
         <Link href={"/"} className="flex items-center gap-4">
-          <Image
+          {/* <Image
             className="rounded-full"
             src={"/logo.png"}
             alt="Quivr Logo"
             width={48}
             height={48}
           />
-          <h1 className="font-bold">Quivr</h1>
+          <h1 className="font-bold">Quivr</h1> */}
+          <h1 className="font-bold">专业数据库</h1>
         </Link>
         <NavItems className="hidden sm:flex" />
         <MobileMenu />

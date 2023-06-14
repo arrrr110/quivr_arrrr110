@@ -31,12 +31,12 @@ const MobileMenu: FC = () => {
                       className="text-3xl h-fit text-center flex-col items-center justify-center gap-10"
                     />
 
-                    <p className="">
+                    {/* <p className="">
                       Get a Second Brain with{" "}
                       <span className="text-primary dark:bg-white rounded-sm">
                         Quivr
                       </span>
-                    </p>
+                    </p> */}
 
                     <Dialog.Close asChild>
                       <button

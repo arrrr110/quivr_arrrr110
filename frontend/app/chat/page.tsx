@@ -1,12 +1,14 @@
 "use client";
 import Link from "next/link";
 import { MdMic, MdMicOff, MdSettings } from "react-icons/md";
+import "../chat/btn.css";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import PageHeading from "../components/ui/PageHeading";
 import ChatMessages from "./components/ChatMessages";
 import { useQuestion } from "./hooks/useQuestion";
 import { useSpeech } from "./hooks/useSpeech";
+
 
 export default function ChatPage() {
   const { history, isPending, question, askQuestion, setQuestion } =
@@ -17,8 +19,8 @@ export default function ChatPage() {
     <main className="min-h-screen w-full flex flex-col pt-32">
       <section className="flex flex-col justify-center items-center flex-1 gap-5 h-full">
         <PageHeading
-          title="Chat with your brain"
-          subtitle="Talk to a language model about your uploaded data"
+          title="与知识库对话"
+          subtitle="和语言模型针对已上传的资料开展沟通"
         />
         {/* Chat */}
         <Card className="p-5 max-w-3xl w-full min-h-full flex-1 mb-24">
@@ -37,10 +39,10 @@ export default function ChatPage() {
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
                 className="w-full p-2 border border-gray-300 dark:border-gray-500 outline-none rounded dark:bg-gray-800"
-                placeholder="Begin conversation here..."
+                placeholder="在这里开始对话..."
               />
-              <Button type="submit" isLoading={isPending}>
-                {isPending ? "Thinking..." : "Chat"}
+              <Button type="submit" isLoading={isPending} className="wider-button">
+                {isPending ? "思考..." : "发送"}
               </Button>
               {/* Mic Button */}
               <Button

@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import { cookies, headers } from "next/headers";
 import { BrainConfigProvider } from "../lib/context/BrainConfigProvider/brain-config-provider";
-import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import { ToastProvider } from "./components/ui/Toast";
 import "./globals.css";
@@ -12,9 +11,9 @@ import SupabaseProvider from "./supabase-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Quivr - Get a Second Brain with Generative AI",
+  title: "专业数据库 - 使用生成式 AI 获得第二个大脑",
   description:
-    "Quivr is your second brain in the cloud, designed to easily store and retrieve unstructured information.",
+    "专业数据库是您在线的第二个大脑，旨在轻松存储和检索非结构化信息。",
 };
 
 export default async function RootLayout({
@@ -41,7 +40,7 @@ export default async function RootLayout({
             <BrainConfigProvider>
               <NavBar />
               {children}
-              <Footer />
+              {/* <Footer /> */}
             </BrainConfigProvider>
           </SupabaseProvider>
         </ToastProvider>
